@@ -229,7 +229,8 @@ $ stylestats -h
     -h, --help           output usage information
     -V, --version        output the version number
     -c, --config [path]  Path and name of the incoming JSON file.
-    -t, --type [format]  Specify the output format. <json|html|csv>
+    -t, --type [format]  Specify the output format. <json|html|csv|pptx>
+    -o, --output [path]  Output directory when using -t pptx option.
     -s, --simple         Show compact style's log.
     -g, --gzip           Show gzipped file size.
     -n, --number         Show only numeral metrics.
