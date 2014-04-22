@@ -107,10 +107,10 @@ If you set HTML page, StyleStats will analyze stylesheets and `style` elements.
 $ stylestats http://t32k.me/
 ```
 
-`-t` option output JSON, CSV and HTML.
+`-t` option output JSON, CSV, HTML and PPTX.
 
 ```sh
-$ stylestats foo.css -t [json|csv|html]
+$ stylestats foo.css -t [json|csv|html|pptx]
 ```
 
 If you installed __[gist](https://github.com/defunkt/gist)__ tool, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with one-liner command.
@@ -118,6 +118,12 @@ If you installed __[gist](https://github.com/defunkt/gist)__ tool, you can uploa
 ```sh
 $ stylestats http://t32k.me/ -t html > stats.md && gist stats.md
 https://gist.github.com/9725673
+```
+
+`-o` option output directory when using -t pptx option.
+
+```sh
+$ stylestats foo.css -t pptx -o ~/Desktop
 ```
 
 ## Grunt & Gulp modules

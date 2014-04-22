@@ -54,7 +54,9 @@
     "commander": "~2.2.0",
     "cli-table": "~0.3.0",
     "gzip-size": "~0.1.0",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "color": "~0.5.0",
+    "officegen-2": "git://github.com/k0sukey/officegen.git"
   },
   "devDependencies": {
     "mocha": "~1.18.2",

@@ -14,6 +14,7 @@ var json2csv = require('json2csv');
 var StyleStats = require('../lib/stylestats');
 var aliases = require('../assets/aliases.json');
 var util = require('../lib/util');
+var pptx = require('../lib/pptx');
 
 /**
  * Prettify StyleStats data.
@@ -52,7 +53,8 @@ program
     .version(require('../package.json').version)
     .usage('[options] <file ...>')
     .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
-    .option('-t, --type [format]', 'Specify the output format. <json|html|csv>')
+    .option('-t, --type [format]', 'Specify the output format. <json|html|csv|pptx>')
+    .option('-o, --output [path]', 'Output directory when using -t pptx option.')
     .option('-s, --simple', 'Show compact style\'s log.')
     .option('-g, --gzip', 'Show gzipped file size.')
     .option('-n, --number', 'Show only numeral metrics.')
@@ -150,6 +152,9 @@ stats.parse(function(error, result) {
                 paths: result.paths
             });
             console.log(html);
+            break;
+        case 'pptx':
+            pptx.Factory(result, program.output);
             break;
         default:
             var table = new Table({
